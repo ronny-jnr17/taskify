@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taskify</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">✦ Taskify</div>
+    <p class="tagline">Your daily task command center</p>
+  </header>
+
+  <main>
+
+    <!-- ADD / EDIT FORM -->
+    <section class="form-card" id="form-section">
+      <h2 id="form-title">Add New Task</h2>
+      <input type="hidden" id="task-id" />
+
+      <div class="field">
+        <label for="title">Title <span class="required">*</span></label>
+        <input type="text" id="title" placeholder="e.g. Study for Data Structures exam" />
+        <span class="error" id="title-error">Title is required.</span>
+      </div>
+
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" rows="3" placeholder="Optional details..."></textarea>
+      </div>
+
+      <div class="field" id="status-field" style="display:none;">
+        <label for="status">Status</label>
+        <select id="status">
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-primary" onclick="submitTask()">
+          <span id="btn-label">Add Task</span>
+        </button>
+        <button class="btn-secondary" id="cancel-btn" onclick="cancelEdit()" style="display:none;">
+          Cancel
+        </button>
+      </div>
+    </section>
+
+    <!-- TASK LIST -->
+    <section class="task-section">
+      <div class="task-header">
+        <h2>All Tasks</h2>
+        <span class="task-count" id="task-count">0 tasks</span>
+      </div>
+
+      <div id="task-list">
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon">📋</div>
+          <p>No tasks yet. Add your first one above!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
