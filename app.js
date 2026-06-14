@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api/tasks';
+const API = 'https://taskify-production-dc08.up.railway.app/api/tasks';
 
 let tasks = [];
 let editingId = null;
