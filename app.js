@@ -6,7 +6,7 @@ let editingId = null;
 // ── FETCH ALL TASKS ──────────────────────────────────────────
 async function loadTasks() {
   try {
-    const res = await fetch(API);
+    const res = await fetch(API, { cache: 'no-store' });
     if (!res.ok) throw new Error();
     tasks = await res.json();
     renderTasks();
